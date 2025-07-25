@@ -1,0 +1,43 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta property="og:title" content="Flatbush Safety Patrol"/>
+    <meta property="og:description" content="Flatbush Safety Patrol Official Web App"/>
+    <meta property="og:image" content="https://mocha-cdn.com/og.png" type="image/png"/>
+    <meta property="og:url" content="https://thvzkwm5ewc3m.mocha.app"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:author" content="SafeWatch Pro"/>
+    <meta property="og:site_name" content="Flatbush Safety Patrol"/>
+    <meta property="twitter:card" content="summary_large_image"/>
+    <meta property="twitter:site" content="@safewatch_pro"/>
+    <meta property="twitter:title" content="Flatbush Safety Patrol"/>
+    <meta property="twitter:description" content="Flatbush Safety Patrol Official Web App"/>
+    <meta property="twitter:image" content="https://mocha-cdn.com/og.png" type="image/png"/>
+    <link rel="shortcut icon" href="https://mocha-cdn.com/favicon.ico" type="image/x-icon"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="https://mocha-cdn.com/apple-touch-icon.png" type="image/png"/>
+    <title>
+      Flatbush Safety Patrol
+    </title>
+  </head>
+  <body>
+    <div id="root">
+    </div>
+    <script type="module" src="/src/react-app/main.tsx">
+    </script>
+    <script>
+      // Register service worker for push notifications
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('/sw.js')
+            .then(function(registration) {
+              console.log('SW registered: ', registration);
+            })
+            .catch(function(registrationError) {
+              console.log('SW registration failed: ', registrationError);
+            });
+        });
+      }
+    </script>
+  </body>
+</html>
